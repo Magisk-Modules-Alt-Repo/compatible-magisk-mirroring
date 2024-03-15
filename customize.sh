@@ -15,7 +15,7 @@ function isCompatibleMagiskMirroring()
     fi
 }
 
-if ! isCompatibleMagiskMirroring; then
+if ! isCompatibleMagiskMirroring || [ -e "${TargetDir}/${MountingMirrorsScript}" ]; then
     if [ ! -d "${TargetDir}" ]; then
         mkdir "${TargetDir}"
         chcon u:object_r:adb_data_file:s0 "${TargetDir}"
