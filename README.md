@@ -11,7 +11,7 @@ This module makes the compatible Magisk-mirroring for installing pure Magisk mod
 
 ## DISCLAIMER
 
-* I am not responsible for any damage that may occur to your device, so it is your own choice to attempt this module. This module doesn't guarantee any magisk modue to be able to install and run on incompatible magisk variants and KernelSU.
+* I am not responsible for any damage that may occur to your device, so it is your own choice to attempt this module. This module doesn't guarantee any magisk module to be able to install and run on incompatible magisk variants and KernelSU.
 <br/>
 
 ##
