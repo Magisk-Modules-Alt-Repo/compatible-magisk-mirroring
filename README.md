@@ -2,11 +2,11 @@
 This module provides the compatible Magisk-mirroring for installing pure Magisk modules on incompatible Magisk variants and KernelSU. 
 <br/>
 
-* Remark only for KernelSU: KernelSU cannot allow "magisk" named command in "/data/adb/ksu/bin", so this module puts "ksu-magisk" command instead. As the result, you have to replace every "$(magisk --path)" command execution with "$(ksu-magisk --path)" in all shell scripts of a (pure) magisk modue ZIP file you intend to install.
+* Remark only for KernelSU: As KernelSU doesn't allow any command named "magisk" in "/data/adb/ksu/bin", this module puts "ksu-magisk" command there instead. As the result, you have to replace all "magisk --path" command executions with "ksu-magisk --path" in all magisk standard shell scripts of a (pure) magisk modue ZIP file you intend to install. Typically you can do this by inserting `alias magisk='ksu-magisk'` line at the first line except shebang and comment lines for all the scripts.
 
-* This module was made and has been tested slightly on Magisk alpha, Kitsune Magisk and KernelSU, as a help for installing my other pure magisk modules on them.
+* This module was made, and has been tested slightly on Magisk alpha, Kitsune Magisk and KernelSU, as a help for installing my other pure magisk modules on them.
 
-* See also my companion magisk module ["Audio misc. settings"](https://github.com/Magisk-Modules-Alt-Repo/audio-misc-settings) for simply improving audio quality with respect to the number of media volume steps and resampling distortion of the Android OS mixer (AudioFlinger), and my root script ["USB_SampleRate_Changer"](https://github.com/yzyhk904/USB_SampleRate_Changer) to change the sample rate of the USB (HAL) audio class driver and a 3.5mm jack on the fly like Bluetooth LDAC or Windows mixer to enjoy high resolution sound or to reduce resampling distortion (actually pre-echo, ringing and intermodulation) ultimately. 
+* See also my magisk modules, ["Audio misc. settings"](https://github.com/Magisk-Modules-Alt-Repo/audio-misc-settings) , ["DRC remover"](https://github.com/Magisk-Modules-Alt-Repo/drc-remover), ["USB Samplerate Unlocker"](https://github.com/Magisk-Modules-Alt-Repo/usb-samplerate-unlocker) and ["Hifi Maximizer"](https://github.com/yzyhk904/hifi-maximizer-mod).
 <br/><br/>
 
 ## DISCLAIMER

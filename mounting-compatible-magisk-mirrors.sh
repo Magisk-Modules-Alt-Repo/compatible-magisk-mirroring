@@ -10,7 +10,7 @@ if [ -n "$KSU" ]; then
     MAGISK_FOR_KSU="/data/adb/ksu/bin/ksu-magisk"
     
     if [ -e "$MAGISK_FOR_KSU" ]; then
-        # Delete old one, then update it for reflexcting an updated script
+        # Delete old one, then update it for reflecting an updated script
         rm -f "$MAGISK_FOR_KSU"
     fi
     
@@ -28,7 +28,7 @@ for a in "$@" ; do
     esac
 done
 
-exec su "$@"
+exit 1
 EOF
     chcon u:object_r:adb_data_file:s0 "$MAGISK_FOR_KSU"
     chown root:root "$MAGISK_FOR_KSU"
