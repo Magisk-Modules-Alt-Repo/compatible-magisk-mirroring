@@ -1,5 +1,5 @@
 ## Compatible Magisk-mirroring
-This module makes the compatible Magisk-mirroring for installing pure Magisk modules on incompatible Magisk variants and KernelSU. 
+This module provides the compatible Magisk-mirroring for installing pure Magisk modules on incompatible Magisk variants and KernelSU. 
 <br/>
 
 * Remark only for KernelSU: KernelSU cannot allow "magisk" named command in "/data/adb/ksu/bin", so this module puts "ksu-magisk" command instead. As the result, you have to replace every "$(magisk --path)" command execution with "$(ksu-magisk --path)" in all shell scripts of a (pure) magisk modue ZIP file you intend to install.
