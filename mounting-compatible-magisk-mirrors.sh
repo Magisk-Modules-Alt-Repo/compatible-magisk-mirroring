@@ -54,6 +54,7 @@ for md in "/system" "/vendor" "/odm" "/product" "/my_product" ; do
         if [ ! -d "${MagiskMirror}${md}" ]; then
             mkdir "${MagiskMirror}${md}"
             mount -o ro "${md}" "${MagiskMirror}${md}"
+            mount --make-private "${MagiskMirror}${md}"
         fi
     fi
 done
