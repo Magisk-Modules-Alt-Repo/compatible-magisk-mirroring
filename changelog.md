@@ -2,6 +2,7 @@
 
 # v1.1.0
 * Fixed a bug of providing modified system files (added "mount --make-private each-partition")
+* Fixed a permission bug
 
 # v1.0.1
 * Changed ksu-magisk more harmless
