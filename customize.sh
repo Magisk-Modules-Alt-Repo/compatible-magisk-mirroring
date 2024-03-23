@@ -20,7 +20,7 @@ if ! isCompatibleMagiskMirroring || [ -e "${TargetDir}/${MountingMirrorsScript}"
         mkdir "${TargetDir}"
         chcon u:object_r:adb_data_file:s0 "${TargetDir}"
         chown root:root "${TargetDir}"
-        chmod 777 "${TargetDir}"
+        chmod 755 "${TargetDir}"
     fi
     cp -f "${MODPATH}/${MountingMirrorsScript}" "${TargetDir}/${MountingMirrorsScript}"
     chcon u:object_r:adb_data_file:s0 "${TargetDir}/${MountingMirrorsScript}"
