@@ -8,19 +8,21 @@
 
 if [ -n "$KSU" ]; then
     MAGISK_FOR_KSU="/data/adb/ksu/bin/ksu-magisk"
+    # Select a new folder under "/mnt"
+    KSU_MAGISK_PATH="/mnt/.cmr"
     
     if [ -e "$MAGISK_FOR_KSU" ]; then
-        # Delete old one, then update it for reflecting an updated script
+        # Delete old one, then update it for reflecting an updating script
         rm -f "$MAGISK_FOR_KSU"
     fi
     
-    cat << 'EOF'  > "$MAGISK_FOR_KSU"
+    cat << _EOF_  > "$MAGISK_FOR_KSU"
 #!/system/bin/sh
 
-for a in "$@" ; do
-    case "$a" in
+for a in "\$@" ; do
+    case "\$a" in
         "--path" )
-            echo "/mnt/.cmr"
+            echo "$KSU_MAGISK_PATH"
             exit 0
             ;;
         * )
@@ -29,16 +31,18 @@ for a in "$@" ; do
 done
 
 exit 1
-EOF
+_EOF_
     chcon u:object_r:adb_data_file:s0 "$MAGISK_FOR_KSU"
     chown root:root "$MAGISK_FOR_KSU"
     chmod 755 "$MAGISK_FOR_KSU"
     
-    MagiskMirror="/mnt/.cmr/.magisk/mirror"
+    MagiskMirror="${KSU_MAGISK_PATH}/.magisk/mirror"
     mkdir -p "$MagiskMirror"
-    chown -R root:root "${MagiskMirror}/../.."
-    chmod -R a+rx "${MagiskMirror}/../.."
-    chcon -R u:object_r:tmpfs:s0 "${MagiskMirror}/../.."
+    for d in "${KSU_MAGISK_PATH}" "${KSU_MAGISK_PATH}/.magisk" "${KSU_MAGISK_PATH}/.magisk/mirror"; do
+        chown  root:root "$d"
+        chmod a+rx "$d"
+        chcon u:object_r:tmpfs:s0 "$d"
+    done
     
 else
     MagiskMirror="$(magisk --path)/.magisk/mirror"
