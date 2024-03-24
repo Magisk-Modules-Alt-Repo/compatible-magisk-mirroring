@@ -1,6 +1,7 @@
 ## Compatible Magisk-mirroring
 This module provides the compatible Magisk-mirroring (i.e., unmodified original system files in a mounted state) for installing pure Magisk modules on incompatible Magisk variants and KernelSU. 
 <br/>
+
 A typical Magisk module modifying an existing system file on "/vendor/etc", e.g., "/vendor/etc/audio_policy_configuration.xml", needs its original file as intendedly for generating a modified one by editing some parts of the file, and putting the modified one in "${MODPATH}/system/vendor/etc".
 
 Because system files on "/vendor" might be modified already by other Magisk modules and even by the module itself (which has already been installed) when installing or updating the module in the Magisk manager, the module (usually "customize.sh") possibly fails to install or installs wrongly in silence by their interference. For avoiding this situation, experienced Magisk module developers use mirrored system files under "$(magisk --path)/.magisk/mirror" that are unmodified original. However some recent Magisk variants (e.g., Magsik alpha, Kitsune Magisk, and KernelSU) don't provide this mirrored system files for developers.
