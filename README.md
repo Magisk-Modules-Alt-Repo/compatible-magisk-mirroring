@@ -10,7 +10,7 @@ For resolving this situation, this module puts a tiny script in "/data/adb/post-
 
 Without this module, developers must move some code (referring to unmodified original system files) in "customize.sh" into "post-fs-data.sh" (for handling almost unmodified original ones just before Magisk starts magic mounting) involuntarily for supporting such variants. It's very unfortunate, I think.
 
-Although some people think "customize.sh" could refer to the original sytem files by mounting mirrors in it, it isn't possible by normal way because system files have been mounted in a shared mode before installing magisk modules in the Magisk manager, and the mirrors provide only possibly modified ones by already installed Magisk modules.
+Although some people might think "customize.sh" could refer to the original sytem files by mounting mirrors in it, it isn't possible by normal means because system files have been mounted in a shared mode before installing magisk modules in the Magisk manager, and the mirrors provide only possibly modified ones by already installed Magisk modules.
 <br/>
 
 * Remark only for KernelSU: Because KernelSU doesn't allow any command named "magisk" to place in "/data/adb/ksu/bin", this module puts "ksu-magisk" command there instead. As the result, you have to replace all "magisk --path" command executions with "ksu-magisk --path" in all magisk standard shell scripts of a (pure) magisk modue ZIP file you intend to install. Typically you can do this by inserting `alias magisk='ksu-magisk'` line at the first line below the shebang line and its following comment ones for all the scripts.
