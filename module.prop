@@ -1,6 +1,6 @@
 id=compatible-magisk-mirroring
 name=Compatible Magisk-mirroring
-version=v1.1.1
-versionCode=1101
+version=v1.1.2
+versionCode=1102
 author=zyhk
-description=A Magisk module providing the compatible Magisk-mirroring for installing pure Magisk modules on incompatible Magisk variants and KernelSU.
+description=A Magisk module providing the compatible Magisk-mirroring for installing pure Magisk modules on incompatible Magisk variants and KernelSU (incl. APatch).

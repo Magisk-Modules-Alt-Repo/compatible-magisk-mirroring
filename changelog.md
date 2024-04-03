@@ -1,5 +1,8 @@
 ## Change logs
 
+# v1.1.2
+* Added a support for APatch
+
 # v1.1.1
 * Fixed a permission bug
 * Changed to use exact folder names in command executions instead of recursion options

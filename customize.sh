@@ -17,6 +17,7 @@ function isCompatibleMagiskMirroring()
 
 if ! isCompatibleMagiskMirroring || [ -e "${TargetDir}/${MountingMirrorsScript}" ]; then
     if [ ! -d "${TargetDir}" ]; then
+        # KernelSU and APatch don't have this folder by default
         mkdir "${TargetDir}"
         chcon u:object_r:adb_data_file:s0 "${TargetDir}"
         chown root:root "${TargetDir}"
