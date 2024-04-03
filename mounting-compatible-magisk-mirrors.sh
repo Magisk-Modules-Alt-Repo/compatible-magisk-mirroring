@@ -6,8 +6,12 @@
 # Usage: Put this into "/data/adb/post-fs-data.d" and "chmod +x this" there, if your Magisk variant isn't compatible with official Magisk w.r.t mirroring
 #
 
-if [ -n "$KSU" ]; then
-    MAGISK_FOR_KSU="/data/adb/ksu/bin/ksu-magisk"
+if [ -n "$KSU"  -o  -n "$APATCH" ]; then
+    if [ -n "$KSU" ]; then
+        MAGISK_FOR_KSU="/data/adb/ksu/bin/ksu-magisk"
+    else
+        MAGISK_FOR_KSU="/data/adb/ap/bin/ksu-magisk"
+    fi
     # Select a new folder under "/mnt"
     KSU_MAGISK_PATH="/mnt/.cmr"
     
