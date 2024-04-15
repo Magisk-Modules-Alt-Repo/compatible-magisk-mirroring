@@ -1,5 +1,8 @@
 ## Change logs
 
+# v1.1.3
+* Fixed not to remove post-fs-data.d for Magisk variants
+
 # v1.1.2
 * Added a support for APatch
 

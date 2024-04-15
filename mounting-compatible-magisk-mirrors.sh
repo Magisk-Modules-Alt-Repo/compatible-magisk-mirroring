@@ -47,9 +47,15 @@ _EOF_
         chmod a+rx "$d"
         chcon u:object_r:tmpfs:s0 "$d"
     done
-    
-else
+
+elif [ -n "$(magisk --path)" ]; then
     MagiskMirror="$(magisk --path)/.magisk/mirror"
+    if [ ! -d "$MagiskMirror" ]; then
+        mkdir -p "$MagiskMirror"
+    fi
+
+else
+    exit 1
     
 fi
 

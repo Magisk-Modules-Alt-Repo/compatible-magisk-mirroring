@@ -21,7 +21,7 @@ fi
 
 if [ -e "${TargetDir}/${MountingMirrorsScript}" ]; then
     rm -f "${TargetDir}/${MountingMirrorsScript}"
-    if [ -z $(ls -A "${TargetDir}") ]; then
+    if [ -n "$MAGISK_FOR_KSU"  -a  -z $(ls -A "${TargetDir}") ]; then
         # KernelSU and APatch don't have this folder by default
         rmdir "${TargetDir}"
     fi
