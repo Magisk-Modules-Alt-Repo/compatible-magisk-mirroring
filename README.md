@@ -1,14 +1,14 @@
 ## Compatible Magisk-mirroring
-This module provides the compatible Magisk-mirroring (i.e., unmodified original system files (in a mounted state) mainly referred from the module installation script "customize.sh") for installing pure Magisk modules on incompatible Magisk variants and KernelSU (including APatch).
+This module provides the compatible Magisk-mirroring (i.e., unmodified original system files (in a mounted state) mainly referred from the module installation script "customize.sh") for installing pure Magisk modules on incompatible Magisk variants (including forthcoming official Magisk?) and KernelSU (including APatch).
 <br/>
 
 For example, a typical Magisk module modifying an existing system file on "/vendor/etc" (say "/vendor/etc/audio_policy_configuration.xml") needs its unmodified original file for generating new one from it as intendedly by editing some parts in the original one, and putting it in "${MODPATH}/system/vendor/etc" so that Magisk shall overlay it on the original one on "/vendor" after booting up.
 
-Because system files on "/vendor" might be modified already by other Magisk modules and even by the module itself (which has already been installed) when installing or updating the module in the Magisk manager, the module (usually "customize.sh") possibly fails to install or installs wrongly in silence by their interference. For avoiding such situation, experienced Magisk module developers use mirrored system files under "$(magisk --path)/.magisk/mirror" that are unmodified original. However some recent Magisk variants (e.g., Magsik alpha, Kitsune Magisk, and KernelSU) don't provide this mirrored system files to developers for some non-technical reason.
+Because system files on "/vendor" might be modified already by the module itself (which has already been installed) or other Magisk modules when updating or newly installing the module in the Magisk manager, the module (usually "customize.sh") possibly fails to install or installs wrongly in silence by their interference. For avoiding such situation, experienced Magisk module developers use mirrored system files under "$(magisk --path)/.magisk/mirror" that are unmodified original. However some recent Magisk variants (e.g., Magsik alpha, Kitsune Magisk, and KernelSU) don't provide this mirrored system files to developers for some non-technical reason.
 
-For resolving this situation, this module puts a tiny script in "/data/adb/post-fs-data.d" and patches and forces the Magisk variants to provide the mirrored system files when installing, updating and even executing Magisk modules thereafter (but mainly for "customize.sh").
+For resolving this situation, this module puts a tiny script in "/data/adb/post-fs-data.d" and patches and forces the Magisk variants to provide the mirrored system files when updating, installing and even executing Magisk modules thereafter (but mainly for "customize.sh").
 
-Without this module, developers must move some code (referring to unmodified original system files) in "customize.sh" into "post-fs-data.sh" (for handling almost unmodified original ones just before Magisk starts magic mounting) involuntarily for supporting such variants. It's very unfortunate, I think.
+Without this module, developers must move some code (referring to unmodified original system files) in "customize.sh" into "post-fs-data.sh" (for handling almost unmodified original ones (but possibly already modified by "post-fs-data.sh" of another module) just before Magisk starts magic mounting) involuntarily for supporting such variants. It's very unfortunate, I think.
 
 Although some people might think "customize.sh" could refer to the original sytem files by mounting mirrors in it, it isn't possible by normal means because system files have been mounted in a shared mode before installing magisk modules in the Magisk manager, and the mirrors provide only possibly modified ones by already installed Magisk modules.
 <br/>
@@ -22,7 +22,7 @@ Although some people might think "customize.sh" could refer to the original syte
 
 ## DISCLAIMER
 
-* I am not responsible for any damage that may occur to your device, so it is your own choice to attempt this module. This module doesn't guarantee any magisk module to be able to install and run on incompatible magisk variants and KernelSU.
+* I am not responsible for any damage that may occur to your device, so it is your own choice whether to attempt this module or not. This module doesn't guarantee any magisk module to be able to install and run on incompatible magisk variants and KernelSU.
 <br/>
 
 ##
