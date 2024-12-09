@@ -6,7 +6,7 @@ For example, a typical Magisk module modifying an existing system file on "/vend
 
 Because system files on "/vendor" might be modified already by the module itself (which has already been installed) or other Magisk modules when updating or newly installing the module in the Magisk manager, the module (usually "customize.sh") possibly fails to install or installs wrongly in silence by their interference. For avoiding such situation, experienced Magisk module developers use mirrored system files under "$(magisk --path)/.magisk/mirror" that are unmodified original. However Magisk v28.0 & v28.1 and some recent Magisk variants (e.g., Magsik alpha, Kitsune Mask, KernelSU and APatch) don't provide this mirrored system files to developers for some non-technical reason.
 
-For resolving this situation, this module puts a tiny script in "/data/adb/post-fs-data.d" and patches and forces the Magisk v28.0 and its variants to provide the mirrored system files when updating, installing and even executing Magisk modules thereafter (but mainly for "customize.sh").
+For resolving this situation, this module puts a tiny script in "/data/adb/post-fs-data.d" and patches and forces the Magisk v28.0 & v28.1 and its variants to provide the mirrored system files when updating, installing and even executing Magisk modules thereafter (but mainly for "customize.sh").
 
 Without this module, developers must move some code (referring to unmodified original system files) in "customize.sh" into "post-fs-data.sh" (for handling almost unmodified original ones (but possibly already modified by "post-fs-data.sh" of another module) just before Magisk starts magic mounting) involuntarily for supporting such variants. It's very unfortunate, I think.
 
