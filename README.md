@@ -17,7 +17,7 @@ Although some people might think "customize.sh" could refer to the original syte
 
 * This module was made, and has been tested slightly on Magisk v28.0 & v28.1, Magisk alpha, Kitsune Mask, KernelSU and APatch, as a help for installing my other pure magisk modules on them.
 
-* See also my magisk modules, ["Audio misc. settings"](https://github.com/Magisk-Modules-Alt-Repo/audio-misc-settings) , ["DRC remover"](https://github.com/Magisk-Modules-Alt-Repo/drc-remover), ["USB Samplerate Unlocker"](https://github.com/Magisk-Modules-Alt-Repo/usb-samplerate-unlocker) and ["Hifi Maximizer"](https://github.com/yzyhk904/hifi-maximizer-mod).
+* See also my magisk modules, ["Audio misc. settings"](https://github.com/Magisk-Modules-Alt-Repo/audio-misc-settings) , ["Audio Samplerate Changer"](https://github.com/Magisk-Modules-Alt-Repo/audio-samplerate-changer) , ["DRC remover"](https://github.com/Magisk-Modules-Alt-Repo/drc-remover), ["USB Samplerate Unlocker"](https://github.com/Magisk-Modules-Alt-Repo/usb-samplerate-unlocker) and ["Hifi Maximizer"](https://github.com/yzyhk904/hifi-maximizer-mod).
 <br/><br/>
 
 ## DISCLAIMER
