@@ -1,5 +1,5 @@
 ## Compatible Magisk-mirroring
-This module provides the compatible Magisk-mirroring (i.e., unmodified original system files (in a mounted state) mainly referred from the module installation script "customize.sh") for installing pure Magisk modules (before Magisk v28.0) on official Magisk v28.0 & v28.1, Magisk variants, KernelSU and APatch.
+This module provides the compatible Magisk-mirroring (i.e., unmodified original system files (in a mounted state) mainly referred from the module installation script "customize.sh") for installing pure Magisk modules (before Magisk v28.0) on official Magisk v28.0 and later, Magisk variants, KernelSU and its variants (including APatch).
 <br/>
 
 For example, a typical Magisk module modifying an existing system file on "/vendor/etc" (say "/vendor/etc/audio_policy_configuration.xml") needs its unmodified original file for generating new one from it as intendedly by editing some parts in the original one, and putting it in "${MODPATH}/system/vendor/etc" so that Magisk shall overlay it on the original one on "/vendor" after booting up.
